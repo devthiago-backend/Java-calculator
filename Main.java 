@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("=== Java Calculator ===");
+        System.out.print("Digite o primeiro numero: ");
+        double num1 = scanner.nextDouble();
+        
+        System.out.print("Digite o segundo numero: ");
+        double num2 = scanner.nextDouble();
+        
+        System.out.print("Operacao (+, -, *, /): ");
+        char op = scanner.next().charAt(0);
+        
+        double result = 0;
+        
+        if (op == '+') {
+            result = num1 + num2;
+        } else if (op == '-') {
+            result = num1 - num2;
+        } else if (op == '*') {
+            result = num1 * num2;
+        } else if (op == '/') {
+            if (num2 != 0) {
+                result = num1 / num2;
+            } else {
+                System.out.println("Erro: Divisao por zero!");
+                return;
+            }
+        } else {
+            System.out.println("Operacao invalida!");
+            return;
+        }
+        
+        System.out.println("Resultado: " + num1 + " " + op + " " + num2 + " = " + result);
+        scanner.close();
+    }
+}
